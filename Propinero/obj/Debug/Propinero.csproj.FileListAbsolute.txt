@@ -1,0 +1,12 @@
+C:\Users\Nacho\Desktop\Nacho4\Proyectos\Propinero\Propinero\Propinero\bin\Debug\Propinero.exe.config
+C:\Users\Nacho\Desktop\Nacho4\Proyectos\Propinero\Propinero\Propinero\bin\Debug\Propinero.exe
+C:\Users\Nacho\Desktop\Nacho4\Proyectos\Propinero\Propinero\Propinero\bin\Debug\Propinero.pdb
+C:\Users\Nacho\Desktop\Nacho4\Proyectos\Propinero\Propinero\Propinero\obj\Debug\Propinero.csprojAssemblyReference.cache
+C:\Users\Nacho\Desktop\Nacho4\Proyectos\Propinero\Propinero\Propinero\obj\Debug\Propinero.Form1.resources
+C:\Users\Nacho\Desktop\Nacho4\Proyectos\Propinero\Propinero\Propinero\obj\Debug\Propinero.Properties.Resources.resources
+C:\Users\Nacho\Desktop\Nacho4\Proyectos\Propinero\Propinero\Propinero\obj\Debug\Propinero.csproj.GenerateResource.cache
+C:\Users\Nacho\Desktop\Nacho4\Proyectos\Propinero\Propinero\Propinero\obj\Debug\Propinero.csproj.CoreCompileInputs.cache
+C:\Users\Nacho\Desktop\Nacho4\Proyectos\Propinero\Propinero\Propinero\obj\Debug\Propinero.exe
+C:\Users\Nacho\Desktop\Nacho4\Proyectos\Propinero\Propinero\Propinero\obj\Debug\Propinero.pdb
+C:\Users\Nacho\Desktop\Nacho4\Proyectos\Propinero\Propinero\Propinero\obj\Debug\Propinero.Acerca_de.resources
+C:\Users\Nacho\Desktop\Nacho4\Proyectos\Propinero\Propinero\Propinero\obj\Debug\Propinero.Cantidad_de_Participantes.resources
