@@ -1,0 +1,16 @@
+C:\Users\Nacho\Desktop\Nacho4\Proyectos\Propinero\Propinero\Propinero\bin\Release\Propinero.exe.config
+C:\Users\Nacho\Desktop\Nacho4\Proyectos\Propinero\Propinero\Propinero\bin\Release\Propinero.exe.manifest
+C:\Users\Nacho\Desktop\Nacho4\Proyectos\Propinero\Propinero\Propinero\bin\Release\Propinero.application
+C:\Users\Nacho\Desktop\Nacho4\Proyectos\Propinero\Propinero\Propinero\bin\Release\Propinero.exe
+C:\Users\Nacho\Desktop\Nacho4\Proyectos\Propinero\Propinero\Propinero\bin\Release\Propinero.pdb
+C:\Users\Nacho\Desktop\Nacho4\Proyectos\Propinero\Propinero\Propinero\obj\Release\Propinero.csprojAssemblyReference.cache
+C:\Users\Nacho\Desktop\Nacho4\Proyectos\Propinero\Propinero\Propinero\obj\Release\Propinero.Acerca_de.resources
+C:\Users\Nacho\Desktop\Nacho4\Proyectos\Propinero\Propinero\Propinero\obj\Release\Propinero.Cantidad_de_Participantes.resources
+C:\Users\Nacho\Desktop\Nacho4\Proyectos\Propinero\Propinero\Propinero\obj\Release\Propinero.Form1.resources
+C:\Users\Nacho\Desktop\Nacho4\Proyectos\Propinero\Propinero\Propinero\obj\Release\Propinero.Properties.Resources.resources
+C:\Users\Nacho\Desktop\Nacho4\Proyectos\Propinero\Propinero\Propinero\obj\Release\Propinero.csproj.GenerateResource.cache
+C:\Users\Nacho\Desktop\Nacho4\Proyectos\Propinero\Propinero\Propinero\obj\Release\Propinero.csproj.CoreCompileInputs.cache
+C:\Users\Nacho\Desktop\Nacho4\Proyectos\Propinero\Propinero\Propinero\obj\Release\Propinero.exe.manifest
+C:\Users\Nacho\Desktop\Nacho4\Proyectos\Propinero\Propinero\Propinero\obj\Release\Propinero.application
+C:\Users\Nacho\Desktop\Nacho4\Proyectos\Propinero\Propinero\Propinero\obj\Release\Propinero.exe
+C:\Users\Nacho\Desktop\Nacho4\Proyectos\Propinero\Propinero\Propinero\obj\Release\Propinero.pdb

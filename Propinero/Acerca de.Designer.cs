@@ -43,7 +43,7 @@ namespace Propinero
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(186, 73);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Propinero 0.1\r\n\r\n© Nacho Caceres. Todos los derechos reservados ";
+            this.label1.Text = "Propinero 1.0\r\n\r\n© Nacho Caceres. Todos los derechos reservados ";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // pictureBox2
@@ -78,10 +78,13 @@ namespace Propinero
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Acerca_de";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Acerca de";
+            this.TopMost = true;
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

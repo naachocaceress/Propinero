@@ -33,25 +33,52 @@ namespace Propinero
         private void cambiarCantidadDeMozosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Cantidad_de_Participantes m = new Cantidad_de_Participantes();
+            m.pasado += new Cantidad_de_Participantes.pasar(ejecutar);
             AddOwnedForm(m);
             m.ShowDialog();
+        }
+
+        public void ejecutar (string dato)
+        {
+            label4.Text = dato;
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void borrarTodoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            label1.Text=("$00.00");
+            total = 0;
+            div = 0;
+            label2.Text = ("$00.00");
         }
 
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyData == Keys.Enter)
             {
-                total = total + Convert.ToDouble(textBox1.Text);
+                if (label4.Text =="0")
+                    MessageBox.Show("La cantidad de participantes no puede ser cero");
+                else
+                {
+                    total = total + Convert.ToDouble(textBox1.Text);
 
-                label2.Text = Convert.ToString("$" + total + ".00");
+                    label2.Text = Convert.ToString("$" + total + ".00");
 
-                int por = Convert.ToInt32(label4.Text);
-              //  int por = 2;
-                div = total / por;
+                    int por = Convert.ToInt32(label4.Text);
 
-                label1.Text = Convert.ToString("$" + div);
+                    div = total / por;
 
-               textBox1.Clear();                
+                    label1.Text = Convert.ToString("$" + div + ".00");
+
+                    textBox1.Clear();
+                }
             }
         }
     }

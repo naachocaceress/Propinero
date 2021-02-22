@@ -10,3 +10,7 @@ C:\Users\Nacho\Desktop\Nacho4\Proyectos\Propinero\Propinero\Propinero\obj\Debug\
 C:\Users\Nacho\Desktop\Nacho4\Proyectos\Propinero\Propinero\Propinero\obj\Debug\Propinero.pdb
 C:\Users\Nacho\Desktop\Nacho4\Proyectos\Propinero\Propinero\Propinero\obj\Debug\Propinero.Acerca_de.resources
 C:\Users\Nacho\Desktop\Nacho4\Proyectos\Propinero\Propinero\Propinero\obj\Debug\Propinero.Cantidad_de_Participantes.resources
+C:\Users\Nacho\Desktop\Nacho4\Proyectos\Propinero\Propinero\Propinero\bin\Debug\Propinero.exe.manifest
+C:\Users\Nacho\Desktop\Nacho4\Proyectos\Propinero\Propinero\Propinero\bin\Debug\Propinero.application
+C:\Users\Nacho\Desktop\Nacho4\Proyectos\Propinero\Propinero\Propinero\obj\Debug\Propinero.exe.manifest
+C:\Users\Nacho\Desktop\Nacho4\Proyectos\Propinero\Propinero\Propinero\obj\Debug\Propinero.application

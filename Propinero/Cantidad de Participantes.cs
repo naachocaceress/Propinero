@@ -12,6 +12,8 @@ namespace Propinero
 {
     public partial class Cantidad_de_Participantes : Form
     {
+        public delegate void pasar(string dato);
+        public event pasar pasado;
         public Cantidad_de_Participantes()
         {
             InitializeComponent();
@@ -19,10 +21,25 @@ namespace Propinero
 
         public void button1_Click(object sender, EventArgs e)
         {
-            //   Form1 f = new Form1();
-            // f.label4.Text = textBox1.Text;
-            //this.Hide();
-            // f.Show();
+            pasado(textBox1.Text);
+            this.Hide();
+        }
+
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                pasado(textBox1.Text);
+                this.Hide();
+            }
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }
