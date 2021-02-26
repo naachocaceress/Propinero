@@ -14,3 +14,4 @@ C:\Users\Nacho\Desktop\Nacho4\Proyectos\Propinero\Propinero\Propinero\bin\Debug\
 C:\Users\Nacho\Desktop\Nacho4\Proyectos\Propinero\Propinero\Propinero\bin\Debug\Propinero.application
 C:\Users\Nacho\Desktop\Nacho4\Proyectos\Propinero\Propinero\Propinero\obj\Debug\Propinero.exe.manifest
 C:\Users\Nacho\Desktop\Nacho4\Proyectos\Propinero\Propinero\Propinero\obj\Debug\Propinero.application
+C:\Users\Nacho\Desktop\Nacho4\Proyectos\Propinero\Propinero\Propinero\obj\Debug\Propinero.Lista.resources

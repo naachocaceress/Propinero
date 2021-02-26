@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,8 @@ namespace Propinero
 {
     public partial class Form1 : Form
     {
+        private SqlConnection conexion = new SqlConnection("Data Source=localhost;Initial Catalog=bd1;Integrated Security=True");
+        
         double total = 0, div = 0 ;    
         public Form1()
         {
@@ -26,8 +29,8 @@ namespace Propinero
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
-            
+            Lista m = new Lista();
+            m.ShowDialog();
         }
 
         private void cambiarCantidadDeMozosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -53,10 +56,27 @@ namespace Propinero
 
         private void borrarTodoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            label1.Text=("$00.00");
+            label1.Text = ("$00.00");
             total = 0;
             div = 0;
             label2.Text = ("$00.00");
+
+            conexion.Open();
+            string sql = $"truncate table propinero";
+            SqlCommand comando = new SqlCommand(sql, conexion);
+            int cant = comando.ExecuteNonQuery();
+            MessageBox.Show("Se borro correctamente"); 
+            conexion.Close();  
+        }
+
+        private void atrasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            conexion.Open();
+            string sql = "delete from propinero where id=(SELECT MAX(id) alto FROM propinero);";
+            SqlCommand comando = new SqlCommand(sql, conexion);
+            int cant = comando.ExecuteNonQuery();
+            conexion.Close();
+            CargarTodo();
         }
 
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
@@ -67,19 +87,37 @@ namespace Propinero
                     MessageBox.Show("La cantidad de participantes no puede ser cero");
                 else
                 {
-                    total = total + Convert.ToDouble(textBox1.Text);
-
-                    label2.Text = Convert.ToString("$" + total + ".00");
-
-                    int por = Convert.ToInt32(label4.Text);
-
-                    div = total / por;
-
-                    label1.Text = Convert.ToString("$" + div + ".00");
-
-                    textBox1.Clear();
+                    conexion.Open();
+                    string sql = "insert into propinero(Propinas) values (@Propinas)";
+                    SqlCommand comando = new SqlCommand(sql, conexion);
+                    comando.Parameters.Add("@Propinas", SqlDbType.Char).Value = textBox1.Text;
+                    comando.ExecuteNonQuery();
+                    conexion.Close();
+                    CargarTodo();
                 }
             }
+        }
+
+        private void CargarTodo()
+        {
+            string query2 = "select sum (Propinas) from propinero";
+            SqlCommand cmd2 = new SqlCommand(query2, conexion);
+            conexion.Open();
+            cmd2.CommandType = CommandType.Text;
+            string tot = cmd2.ExecuteScalar().ToString();
+
+            label2.Text = "$" + tot + ".00";
+
+            int por = Convert.ToInt32(label4.Text);
+            Double itot = Convert.ToDouble(tot);
+
+            div = itot / por;
+
+            label1.Text = Convert.ToString("$" + div);
+
+            conexion.Close();
+
+            textBox1.Clear();
         }
     }
 }

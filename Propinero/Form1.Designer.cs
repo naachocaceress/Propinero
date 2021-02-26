@@ -117,6 +117,7 @@ namespace Propinero
             this.atrasToolStripMenuItem.Name = "atrasToolStripMenuItem";
             this.atrasToolStripMenuItem.Size = new System.Drawing.Size(255, 22);
             this.atrasToolStripMenuItem.Text = "Atras";
+            this.atrasToolStripMenuItem.Click += new System.EventHandler(this.atrasToolStripMenuItem_Click);
             // 
             // cambiarCantidadDeMozosToolStripMenuItem
             // 
