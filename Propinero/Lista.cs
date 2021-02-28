@@ -2,18 +2,21 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
+//using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SQLite;
+
 
 namespace Propinero
 {
     public partial class Lista : Form
     {
-        private SqlConnection conexion = new SqlConnection("Data Source=localhost;Initial Catalog=bd1;Integrated Security=True");
+        //private SqlConnection conexion = new SqlConnection("Data Source=localhost;Initial Catalog=bd1;Integrated Security=True");
+        private SQLiteConnection conexion = new SQLiteConnection("Data Source=MI_DB.sqlite;Version=3;New=True;Compress=True;");
 
         public Lista()
         {
@@ -29,8 +32,8 @@ namespace Propinero
         {
             conexion.Open();
             string sql = "select Propinas from propinero";
-            SqlCommand comando = new SqlCommand(sql, conexion);
-            SqlDataReader registros = comando.ExecuteReader();
+            SQLiteCommand comando = new SQLiteCommand(sql, conexion);
+            SQLiteDataReader registros = comando.ExecuteReader();
             dataGridView1.Rows.Clear();
             while (registros.Read())
             {

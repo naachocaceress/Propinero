@@ -14,3 +14,6 @@ C:\Users\Nacho\Desktop\Nacho4\Proyectos\Propinero\Propinero\Propinero\obj\Releas
 C:\Users\Nacho\Desktop\Nacho4\Proyectos\Propinero\Propinero\Propinero\obj\Release\Propinero.application
 C:\Users\Nacho\Desktop\Nacho4\Proyectos\Propinero\Propinero\Propinero\obj\Release\Propinero.exe
 C:\Users\Nacho\Desktop\Nacho4\Proyectos\Propinero\Propinero\Propinero\obj\Release\Propinero.pdb
+C:\Users\Nacho\Desktop\Nacho4\Proyectos\Propinero\Propinero\Propinero\bin\Release\System.Data.SQLite.dll
+C:\Users\Nacho\Desktop\Nacho4\Proyectos\Propinero\Propinero\Propinero\obj\Release\Propinero.Lista.resources
+C:\Users\Nacho\Desktop\Nacho4\Proyectos\Propinero\Propinero\Propinero\obj\Release\Propinero.csproj.CopyComplete

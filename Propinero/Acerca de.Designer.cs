@@ -43,7 +43,7 @@ namespace Propinero
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(186, 73);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Propinero 1.5\r\n\r\n© Nacho Caceres. Todos los derechos reservados ";
+            this.label1.Text = "Propinero 1.7\r\n\r\n© Nacho Caceres. Todos los derechos reservados ";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // pictureBox2

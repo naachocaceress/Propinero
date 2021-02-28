@@ -2,18 +2,19 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
+//using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SQLite;
 
 namespace Propinero
 {
     public partial class Form1 : Form
     {
-        private SqlConnection conexion = new SqlConnection("Data Source=localhost;Initial Catalog=bd1;Integrated Security=True");
+        private SQLiteConnection conexion = new SQLiteConnection("Data Source=MI_DB.sqlite;Version=3;New=True;Compress=True;");
         
         double total = 0, div = 0 ;    
         public Form1()
@@ -62,8 +63,8 @@ namespace Propinero
             label2.Text = ("$00.00");
 
             conexion.Open();
-            string sql = $"truncate table propinero";
-            SqlCommand comando = new SqlCommand(sql, conexion);
+            string sql = $"delete from propinero";
+            SQLiteCommand comando = new SQLiteCommand(sql, conexion);
             int cant = comando.ExecuteNonQuery();
             MessageBox.Show("Se borro correctamente"); 
             conexion.Close();  
@@ -72,8 +73,8 @@ namespace Propinero
         private void atrasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             conexion.Open();
-            string sql = "delete from propinero where id=(SELECT MAX(id) alto FROM propinero);";
-            SqlCommand comando = new SqlCommand(sql, conexion);
+            string sql = "delete from propinero where id=(SELECT max (id) from propinero)";
+            SQLiteCommand comando = new SQLiteCommand(sql, conexion);
             int cant = comando.ExecuteNonQuery();
             conexion.Close();
             CargarTodo();
@@ -89,8 +90,9 @@ namespace Propinero
                 {
                     conexion.Open();
                     string sql = "insert into propinero(Propinas) values (@Propinas)";
-                    SqlCommand comando = new SqlCommand(sql, conexion);
-                    comando.Parameters.Add("@Propinas", SqlDbType.Char).Value = textBox1.Text;
+                    SQLiteCommand comando = new SQLiteCommand(sql, conexion);
+                    comando.Parameters.AddWithValue("@Propinas",textBox1);
+                    comando.Parameters.Add("@Propinas", DbType.String).Value = textBox1.Text;
                     comando.ExecuteNonQuery();
                     conexion.Close();
                     CargarTodo();
@@ -98,10 +100,24 @@ namespace Propinero
             }
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            conexion.Open();
+            string sql = "CREATE TABLE IF NOT " +
+            "EXISTS propinero (id INTEGER PRIMARY KEY, " +
+            "Propinas NVARCHAR(2048) NULL)";
+            SQLiteCommand comando = new SQLiteCommand(sql, conexion);
+            SQLiteCommand createTable = new SQLiteCommand(sql, conexion);
+
+            createTable.ExecuteReader();
+            conexion.Close();
+            //CargarTodo();
+        }
+
         private void CargarTodo()
         {
             string query2 = "select sum (Propinas) from propinero";
-            SqlCommand cmd2 = new SqlCommand(query2, conexion);
+            SQLiteCommand cmd2 = new SQLiteCommand(query2, conexion);
             conexion.Open();
             cmd2.CommandType = CommandType.Text;
             string tot = cmd2.ExecuteScalar().ToString();
