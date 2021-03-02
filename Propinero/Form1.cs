@@ -123,6 +123,11 @@ namespace Propinero
         {
             if (e.KeyData == Keys.Enter)
             {
+                if (string.IsNullOrEmpty(textBox1.Text))
+                {
+                    MessageBox.Show("No puede estar el campo vacio");
+                    return;
+                }
                 if (label4.Text =="0")
                     MessageBox.Show("La cantidad de participantes no puede ser cero");
                 else

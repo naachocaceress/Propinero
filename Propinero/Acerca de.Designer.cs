@@ -41,9 +41,9 @@ namespace Propinero
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(186, 73);
+            this.label1.Size = new System.Drawing.Size(191, 73);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Propinero 1.9\r\n\r\n© Nacho Caceres. Todos los derechos reservados ";
+            this.label1.Text = "Propinero 1.9.2\r\n\r\n© Nacho Caceres. Todos los derechos reservados \r\n";
             // 
             // pictureBox2
             // 
