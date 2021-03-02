@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Propinero.exe" size="233400">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Propinero.exe" size="234424">
       <assemblyIdentity name="Propinero" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>p6DNI1XOufxqcOW562ir1LbzD3y/yI4+Q1uLr+zk7hE=</dsig:DigestValue>
+        <dsig:DigestValue>H+h07+WQUHAOZRSMlTxE5mSVyk4GJqmkXhMPqaEJlZ4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

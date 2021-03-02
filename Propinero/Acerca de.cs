@@ -17,14 +17,8 @@ namespace Propinero
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-
             System.Diagnostics.Process.Start("https://www.instagram.com/naachocaceres/");
         }
 

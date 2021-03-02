@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-//using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,7 +14,6 @@ namespace Propinero
 {
     public partial class Lista : Form
     {
-        //private SqlConnection conexion = new SqlConnection("Data Source=localhost;Initial Catalog=bd1;Integrated Security=True");
         private SQLiteConnection conexion = new SQLiteConnection("Data Source=MI_DB.sqlite;Version=3;New=True;Compress=True;");
 
         public Lista()

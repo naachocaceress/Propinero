@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-//using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,7 +15,7 @@ namespace Propinero
     {
         private SQLiteConnection conexion = new SQLiteConnection("Data Source=MI_DB.sqlite;Version=3;New=True;Compress=True;");
         
-        double total = 0, div = 0 ;    
+        double div = 0 ;    
         public Form1()
         {
             InitializeComponent();
@@ -57,8 +56,7 @@ namespace Propinero
 
         private void borrarTodoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            label1.Text = ("$00.00");
-            total = 0;
+            label1.Text = ("$00.00");   
             div = 0;
             label2.Text = ("$00.00");
 
@@ -73,11 +71,52 @@ namespace Propinero
         private void atrasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             conexion.Open();
-            string sql = "delete from propinero where id=(SELECT max (id) from propinero)";
+            string sql = "select count(id) from propinero";
             SQLiteCommand comando = new SQLiteCommand(sql, conexion);
-            int cant = comando.ExecuteNonQuery();
+            int RowCount = 0;
+
+            RowCount = Convert.ToInt32(comando.ExecuteScalar());
+            
+            if (RowCount < 1)
+            {
+                MessageBox.Show("No hay datos anteriores para borrar");
+                conexion.Close();
+            }
+            else
+            {
+                if (RowCount == 1)
+                {
+                    string ssql = $"delete from propinero";
+                    SQLiteCommand comandos = new SQLiteCommand(ssql, conexion);
+                    int cant = comandos.ExecuteNonQuery();
+
+                    label1.Text = ("$00.00");
+                    div = 0;
+                    label2.Text = ("$00.00");
+                }
+                else
+                {
+                    string sqll = "delete from propinero where id=(SELECT max (id) from propinero)";
+                    SQLiteCommand comandol = new SQLiteCommand(sqll, conexion);
+                    int cant = comandol.ExecuteNonQuery();
+
+                    string ssql = "select sum (Propinas) from propinero";
+                    SQLiteCommand cmd2 = new SQLiteCommand(ssql, conexion);
+                    cmd2.CommandType = CommandType.Text;
+                    string tot = cmd2.ExecuteScalar().ToString();
+
+                    label2.Text = "$" + tot + ".00";
+
+                    int por = Convert.ToInt32(label4.Text);
+                    Double itot = Convert.ToDouble(tot);
+
+                    div = itot / por;
+
+                    label1.Text = Convert.ToString("$" + div);
+                }
+            }
             conexion.Close();
-            CargarTodo();
+                
         }
 
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
@@ -108,17 +147,30 @@ namespace Propinero
             "Propinas NVARCHAR(2048) NULL)";
             SQLiteCommand comando = new SQLiteCommand(sql, conexion);
             SQLiteCommand createTable = new SQLiteCommand(sql, conexion);
-
             createTable.ExecuteReader();
+
+            SQLiteCommand cmd = new SQLiteCommand("Select * from propinero", conexion);
+            SQLiteDataReader dr;
+            dr = cmd.ExecuteReader();
+
+            if (dr.Read())
+            {
+                string query2 = "select sum (Propinas) from propinero";
+                SQLiteCommand cmd2 = new SQLiteCommand(query2, conexion);
+          
+                cmd2.CommandType = CommandType.Text;
+                string tot = cmd2.ExecuteScalar().ToString();
+
+                label2.Text = "$" + tot + ".00";
+            }
             conexion.Close();
-            //CargarTodo();
         }
 
         private void CargarTodo()
         {
-            string query2 = "select sum (Propinas) from propinero";
-            SQLiteCommand cmd2 = new SQLiteCommand(query2, conexion);
             conexion.Open();
+            string sql = "select sum (Propinas) from propinero";
+            SQLiteCommand cmd2 = new SQLiteCommand(sql, conexion);
             cmd2.CommandType = CommandType.Text;
             string tot = cmd2.ExecuteScalar().ToString();
 
