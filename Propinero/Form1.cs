@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;
-
+  
 namespace Propinero
 {
     public partial class Form1 : Form
@@ -56,16 +56,22 @@ namespace Propinero
 
         private void borrarTodoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            label1.Text = ("$00.00");   
-            div = 0;
-            label2.Text = ("$00.00");
+            MessageBoxButtons botones = MessageBoxButtons.YesNo;
+            DialogResult dr = MessageBox.Show("¿Esta seguro que quiere borrar todo?", "Borrar todo", botones, MessageBoxIcon.Question);
 
+            if (dr == DialogResult.Yes)
+            {
+                label1.Text = ("$00.00");
+                div = 0;
+                label2.Text = ("$00.00");
+            
             conexion.Open();
             string sql = $"delete from propinero";
             SQLiteCommand comando = new SQLiteCommand(sql, conexion);
             int cant = comando.ExecuteNonQuery();
             MessageBox.Show("Se borro correctamente"); 
-            conexion.Close();  
+            conexion.Close();
+            }
         }
 
         private void atrasToolStripMenuItem_Click(object sender, EventArgs e)

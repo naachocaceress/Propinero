@@ -45,6 +45,7 @@ namespace Propinero
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.ocultarMontoDivididoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -139,7 +140,8 @@ namespace Propinero
             // 
             this.diasAnterioresToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.diasAnterioresToolStripMenuItem1,
-            this.estadisticasToolStripMenuItem});
+            this.estadisticasToolStripMenuItem,
+            this.ocultarMontoDivididoToolStripMenuItem});
             this.diasAnterioresToolStripMenuItem.Name = "diasAnterioresToolStripMenuItem";
             this.diasAnterioresToolStripMenuItem.Size = new System.Drawing.Size(255, 22);
             this.diasAnterioresToolStripMenuItem.Text = "Proximamente";
@@ -147,13 +149,13 @@ namespace Propinero
             // diasAnterioresToolStripMenuItem1
             // 
             this.diasAnterioresToolStripMenuItem1.Name = "diasAnterioresToolStripMenuItem1";
-            this.diasAnterioresToolStripMenuItem1.Size = new System.Drawing.Size(151, 22);
+            this.diasAnterioresToolStripMenuItem1.Size = new System.Drawing.Size(198, 22);
             this.diasAnterioresToolStripMenuItem1.Text = "Dias anteriores";
             // 
             // estadisticasToolStripMenuItem
             // 
             this.estadisticasToolStripMenuItem.Name = "estadisticasToolStripMenuItem";
-            this.estadisticasToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.estadisticasToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.estadisticasToolStripMenuItem.Text = "Estadisticas";
             // 
             // acercaDeToolStripMenuItem
@@ -188,6 +190,12 @@ namespace Propinero
             this.label4.TabIndex = 7;
             this.label4.Text = "0";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ocultarMontoDivididoToolStripMenuItem
+            // 
+            this.ocultarMontoDivididoToolStripMenuItem.Name = "ocultarMontoDivididoToolStripMenuItem";
+            this.ocultarMontoDivididoToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.ocultarMontoDivididoToolStripMenuItem.Text = "Ocultar monto dividido";
             // 
             // Form1
             // 
@@ -233,6 +241,7 @@ namespace Propinero
         public System.Windows.Forms.Label label4;
         private System.Windows.Forms.ToolStripMenuItem diasAnterioresToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem estadisticasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ocultarMontoDivididoToolStripMenuItem;
     }
 }
 

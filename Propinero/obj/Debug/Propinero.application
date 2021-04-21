@@ -7,14 +7,14 @@
     <framework targetVersion="4.7.2" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="Propinero.exe.manifest" size="4224">
+    <dependentAssembly dependencyType="install" codebase="Propinero.exe.manifest" size="4223">
       <assemblyIdentity name="Propinero.exe" version="1.0.0.4" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>877OP73TWZIOj0gZrTOgXTpUjuqjX2l20TDFPDf4vgs=</dsig:DigestValue>
+        <dsig:DigestValue>L4EHYumQykoz7eJISRub6t8H7s6erFY53n0eo4ebTg8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
